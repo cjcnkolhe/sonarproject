@@ -3,12 +3,12 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK17'
-        maven 'Maven-3.9'
+       
+        maven 'Maven'
     }
 
     environment {
-        SONAR_HOST_URL = 'http://192.168.1.100:9000'
+        SONAR_HOST_URL = 'http://65.2.29.116:9000'
         SONAR_TOKEN = credentials('sonar-token')
     }
 
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 git(
                     branch: 'main',
-                    url: 'https://github.com/example/my-project.git'
+                    url: 'https://github.com/cjcnkolhe/sonarproject.git'
                 )
             }
         }
