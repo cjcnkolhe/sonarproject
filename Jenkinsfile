@@ -31,7 +31,7 @@ pipeline {
         stage('SonarQube Code Analysis') {
             steps {
                 sh '''
-                    mvn sonar:sonar \
+                    mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                         -Dsonar.projectKey=my-project \
                         -Dsonar.projectName=my-project \
                         -Dsonar.host.url=http://65.2.29.116:9000 \
