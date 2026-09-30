@@ -17,7 +17,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git(
-                    branch: 'main',
+                    branch: 'master',
                     url: 'https://github.com/cjcnkolhe/sonarproject.git'
                 )
             }
