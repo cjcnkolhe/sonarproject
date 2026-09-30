@@ -8,7 +8,6 @@ pipeline {
     }
 
     environment {
-        SONAR_HOST_URL = 'http://65.2.29.116:9000'
         SONAR_TOKEN = credentials('sonar-token')
     }
 
@@ -35,7 +34,7 @@ pipeline {
                     mvn sonar:sonar \
                         -Dsonar.projectKey=my-project \
                         -Dsonar.projectName=my-project \
-                        -Dsonar.host.url=$SONAR_HOST_URL \
+                        -Dsonar.host.url=http://65.2.29.116:9000 \
                         -Dsonar.token=$SONAR_TOKEN
                 '''
             }
