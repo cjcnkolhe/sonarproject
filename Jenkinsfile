@@ -31,10 +31,7 @@ pipeline {
       
 stage('SonarQube Code Analysis') {
     steps {
-        withCredentials([
-            string(credentialsId: 'sonarqube-token',
-                   variable: 'SONAR_TOKEN')
-        ]) {
+      
             sh '''
                 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:5.8.0.7211:sonar \
                   -Dsonar.projectKey=my-project \
@@ -42,7 +39,7 @@ stage('SonarQube Code Analysis') {
                   -Dsonar.host.url=http://16.16.194.221:9000 \
                   -Dsonar.token="$SONAR_TOKEN"
             '''
-        }
+        
     }
 }
 
